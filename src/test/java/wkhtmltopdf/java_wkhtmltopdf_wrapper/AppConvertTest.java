@@ -22,7 +22,7 @@ public class AppConvertTest {
             pdf.saveAs(outFile);
             System.out.println( "Completed process" );
 		} catch (Exception e) {
-			System.out.println( "Error =>" );
+			System.out.println( "Error =>" + e);
 		}
 	}
 	
@@ -37,7 +37,7 @@ public class AppConvertTest {
             pdf.saveAs(outFile);
             System.out.println( "Completed process" );
 		} catch (Exception e) {
-			System.out.println( "Error =>" );
+			System.out.println( "Error =>" + e);
 		}
 	}	
 
