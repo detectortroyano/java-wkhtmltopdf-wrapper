@@ -3,6 +3,7 @@ package wkhtmltopdf.java_wkhtmltopdf_wrapper;
 import org.junit.Test;
 
 import com.github.jhonnymertz.wkhtmltopdf.wrapper.Pdf;
+import com.github.jhonnymertz.wkhtmltopdf.wrapper.params.Param;
 
 public class AppConvertTest {
 
@@ -19,6 +20,11 @@ public class AppConvertTest {
         try {
             Pdf pdf = new Pdf();
             pdf.addPageFromUrl(url);
+            pdf.addParam(new Param("-O", "landscape"));	//--orientation
+            pdf.addParam(new Param("-B", "20"));		//--margin-bottom
+            pdf.addParam(new Param("-L", "20"));		//--margin-left
+            pdf.addParam(new Param("-R", "20"));		//--margin-right
+            pdf.addParam(new Param("-T", "20"));		//--margin-top
             pdf.saveAs(outFile);
             System.out.println( "Completed process" );
 		} catch (Exception e) {
@@ -34,11 +40,16 @@ public class AppConvertTest {
         try {
             Pdf pdf = new Pdf();
             pdf.addPageFromUrl(url);
+            pdf.addParam(new Param("-O", "landscape"));	//--orientation
+            pdf.addParam(new Param("-B", "20"));		//--margin-bottom
+            pdf.addParam(new Param("-L", "20"));		//--margin-left
+            pdf.addParam(new Param("-R", "20"));		//--margin-right
+            pdf.addParam(new Param("-T", "20"));		//--margin-top
             pdf.saveAs(outFile);
             System.out.println( "Completed process" );
 		} catch (Exception e) {
 			System.out.println( "Error =>" + e);
 		}
-	}	
+	}
 
 }
